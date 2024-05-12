@@ -1,0 +1,20 @@
+version: '3.9'
+
+services:
+  django:
+    image: jisnajohn6060/python-app:v1
+    build:  .
+    container_name: django_container
+    ports:
+      - 8000:8000
+
+  postgres:
+    image: postgres:14-alpine
+    restart: always
+    container_name: postgres
+    environment:
+        POSTGRES_USER: myuser
+        POSTGRES_PASSWORD: 12345678
+        POSTGRES_DB: testdb
+    ports:
+        - 5432:5432
