@@ -1,20 +1,20 @@
 version: '3.9'
 
 services:
-  django:
-    image: jisnajohn6060/python-app:v1
-    build:  .
-    container_name: django_container
-    ports:
+  django:                                       # service name
+    image: jisnajohn6060/python-app:v1          # image name
+    build:  .                                   # building from current directory
+    container_name: django_container            # container name
+    ports:                                      # mapping port on the local machine to port on the container to access django application
       - 8000:8000
 
-  postgres:
-    image: postgres:14-alpine
-    restart: always
-    container_name: postgres
-    environment:
+  postgres:                                     # service name for postgres
+    image: postgres:14-alpine                   # mentioning the image
+    restart: always                             # configuring the container to restart automatically (always) in case of failure or unexpected shutdown
+    container_name: postgres                    # container name
+    environment:                                # Specifing uname,pass,db name as environment variables for configuring PostgreSQL
         POSTGRES_USER: myuser
         POSTGRES_PASSWORD: 12345678
         POSTGRES_DB: testdb
-    ports:
+    ports:                                      # mapping port on the local machine to port on the container to access postgres service
         - 5432:5432
