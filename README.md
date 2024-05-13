@@ -15,7 +15,7 @@ Step 1 :
 	- python manage.py startapp testdb
 	- cd postgresTest
 - Edit the settings.py -> 
-	- ALLOWED_HOSTS = ["0.0.0.0","ip:8000","ip"]
+	- ALLOWED_HOSTS = ["0.0.0.0","ip"]
 
 	- Add db details in the database part
 
@@ -29,17 +29,6 @@ Step 1 :
         'PORT': '5432'
    	 }	
 	}
-
-	
-
-	- add following lines to last part of settings.py
-
-	CORS_ALLOW_ALL_ORIGINS = True
-	CORS_ALLOW_CREDENTIALS = True
-	CORS_ALLOWED_ORIGINS = [
-    	'0.0.0.0'
-	]  # If this is used, then not need to use CORS_ALLOW_ALL_ORIGINS = True
-	CORS_ORIGIN_ALLOW_ALL = True
 
 
 - Editted settings.py with appropriate database information
