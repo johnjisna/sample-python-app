@@ -18,3 +18,8 @@ services:
         POSTGRES_DB: testdb
     ports:                                      # mapping port on the local machine to port on the container to access postgres service
         - 5432:5432
+  nginx:
+    image: nginx_custom                         # image name
+    build:  .                                   # building from current directory
+    container_name: nginx_container             # container name
+    
